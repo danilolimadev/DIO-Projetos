@@ -14,7 +14,7 @@
 
   $servername = "54.234.153.24";
   $username = "root";
-  $password = "Senha123";
+  $password = getenv('DB_PASSWORD');
   $database = "meubanco";
 
   // Criar conexão

@@ -1,2 +1,20 @@
-FROM nginx
+# Utiliza a imagem do PHP
+FROM php:8.0-fpm
+
+# Instala Nginx
+RUN apt-get update && apt-get install -y nginx
+
+# Copie o arquivo de configuração do Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
+
+# Defina a variável de ambiente
+ENV DB_PASSWORD=Senha123
+
+# Copie o código PHP para o diretório padrão
+COPY src/ /var/www/html/
+
+# Exponha a porta 80
+EXPOSE 80
+
+# Inicie Nginx e PHP-FPM
+CMD service nginx start && php-fpm

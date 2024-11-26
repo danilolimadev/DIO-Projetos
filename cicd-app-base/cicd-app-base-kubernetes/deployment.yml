@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+spec:
+  selector:
+    app: app
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: LoadBalancer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  labels:
+    app: app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      app: app
+  spec: 
+    containers:
+    - name: app
+    image: denilsonbonatti/gitlab-cicd-node:1.0
+    imagePullPolice: Always
+    ports: 
+    - containerPort: 3000
+
+

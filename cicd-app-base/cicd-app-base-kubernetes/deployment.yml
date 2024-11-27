@@ -29,7 +29,7 @@ spec:
   spec: 
     containers:
     - name: app
-    image: denilsonbonatti/gitlab-cicd-node:1.0
+    image: danilolimadev/gitlab-cicd-node:1.0
     imagePullPolice: Always
     ports: 
     - containerPort: 3000

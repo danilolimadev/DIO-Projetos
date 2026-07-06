@@ -1,4 +1,4 @@
-# Transcreve Despesas
+# Api Inteligente
 
 API REST em Java para gerenciamento inteligente de despesas utilizando texto, voz e inteligência artificial.
 
